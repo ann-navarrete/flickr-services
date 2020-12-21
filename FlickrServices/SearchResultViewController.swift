@@ -4,13 +4,21 @@ class SearchResultViewController: UITableViewController {
     
     var searchResult: String?
     
-    var searchResultItems: Array<String> = []
-
+    var searchResultItems: Array<PhotoInfo> = []
+    
+    let networkController = NetworkController(baseUrl: "https://www.flickr.com", session: URLSession.shared, apiKey: "fb0bbda58670a6cc760f519c763b650f")
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Search Result"
         print(searchResult)
-        searchResultItems.append(searchResult ?? "")
+        //searchResultItems.append(searchResult ?? "")
+        networkController.fetchSearchInfo(search: searchResult ?? "") { (SearchResult) in
+            self.searchResultItems = SearchResult.photos.photo
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            print(SearchResult)
+        }
     }
     
     // three core items in Table View
@@ -32,7 +40,28 @@ class SearchResultViewController: UITableViewController {
         cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
         
         let result = searchResultItems[indexPath.row]
-        cell.textLabel?.text = result.description
+        
+        networkController.fetchImge(url: result.url_s) { (photo) in
+            print("photo loaded")
+            DispatchQueue.main.async {
+                cell.textLabel?.text = result.title
+                cell.imageView?.image = photo
+                print("The loaded image: \(cell.imageView?.image)")
+            }
+        }
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier)
+        if(segue.identifier == "detailedView") {
+            let detailedView = segue.destination as! DetailedViewController
+            let selectedCell = sender as! UITableViewCell
+            let indexPath = self.tableView.indexPath(for: selectedCell)!
+            let result = searchResultItems[indexPath.row]
+            detailedView.details = result
+            print(selectedCell.imageView)
+           
+        }
     }
 }
