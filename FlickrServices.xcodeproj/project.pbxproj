@@ -15,6 +15,9 @@
 		65B9D5232590B72100589FDB /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9D5222590B72100589FDB /* DetailedViewController.swift */; };
 		65B9D5242590B72100589FDB /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9D5222590B72100589FDB /* DetailedViewController.swift */; };
 		65B9D5252590B72100589FDB /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9D5222590B72100589FDB /* DetailedViewController.swift */; };
+		65B9D5432591BF0F00589FDB /* SearchResultViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9D5422591BF0F00589FDB /* SearchResultViewCell.swift */; };
+		65B9D5442591BF0F00589FDB /* SearchResultViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9D5422591BF0F00589FDB /* SearchResultViewCell.swift */; };
+		65B9D5452591BF0F00589FDB /* SearchResultViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9D5422591BF0F00589FDB /* SearchResultViewCell.swift */; };
 		65D6DDCB258706EF0060C147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6DDCA258706EF0060C147 /* AppDelegate.swift */; };
 		65D6DDCD258706EF0060C147 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6DDCC258706EF0060C147 /* SceneDelegate.swift */; };
 		65D6DDCF258706EF0060C147 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6DDCE258706EF0060C147 /* ViewController.swift */; };
@@ -46,6 +49,7 @@
 		658BF3B825872BBE00B2CB57 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		65B9D513258F490D00589FDB /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		65B9D5222590B72100589FDB /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		65B9D5422591BF0F00589FDB /* SearchResultViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewCell.swift; sourceTree = "<group>"; };
 		65D6DDC7258706EF0060C147 /* FlickrServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D6DDCA258706EF0060C147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65D6DDCC258706EF0060C147 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				65D6DDCC258706EF0060C147 /* SceneDelegate.swift */,
 				65D6DDCE258706EF0060C147 /* ViewController.swift */,
 				65D6DDD0258706EF0060C147 /* Main.storyboard */,
+				65B9D5422591BF0F00589FDB /* SearchResultViewCell.swift */,
 				658BF3B825872BBE00B2CB57 /* SearchResultViewController.swift */,
 				65D6DDD3258706EF0060C147 /* Assets.xcassets */,
 				65D6DDD5258706EF0060C147 /* LaunchScreen.storyboard */,
@@ -274,6 +279,7 @@
 			files = (
 				65B9D514258F490D00589FDB /* NetworkController.swift in Sources */,
 				65D6DDCF258706EF0060C147 /* ViewController.swift in Sources */,
+				65B9D5432591BF0F00589FDB /* SearchResultViewCell.swift in Sources */,
 				65B9D5232590B72100589FDB /* DetailedViewController.swift in Sources */,
 				65D6DDCB258706EF0060C147 /* AppDelegate.swift in Sources */,
 				658BF3B925872BBE00B2CB57 /* SearchResultViewController.swift in Sources */,
@@ -288,6 +294,7 @@
 				658BF3BA25872BBE00B2CB57 /* SearchResultViewController.swift in Sources */,
 				65D6DDE2258706F00060C147 /* FlickrServicesTests.swift in Sources */,
 				65B9D5242590B72100589FDB /* DetailedViewController.swift in Sources */,
+				65B9D5442591BF0F00589FDB /* SearchResultViewCell.swift in Sources */,
 				65B9D515258F490D00589FDB /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				658BF3BB25872BBE00B2CB57 /* SearchResultViewController.swift in Sources */,
+				65B9D5452591BF0F00589FDB /* SearchResultViewCell.swift in Sources */,
 				65D6DDED258706F00060C147 /* FlickrServicesUITests.swift in Sources */,
 				65B9D5252590B72100589FDB /* DetailedViewController.swift in Sources */,
 			);

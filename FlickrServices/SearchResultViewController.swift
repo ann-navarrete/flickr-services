@@ -35,17 +35,18 @@ class SearchResultViewController: UITableViewController {
    // where we configure and putting data into the UI
   // loading up cells (Cell Creation) created by copying a prototype cell you configure in your storyboard
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath)
+        //let cell = SearchResultViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "searchResultCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! SearchResultViewCell
         
-        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+//        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
         
         let result = searchResultItems[indexPath.row]
         
         networkController.fetchImge(url: result.url_s) { (photo) in
             print("photo loaded")
             DispatchQueue.main.async {
-                cell.textLabel?.text = result.title
-                cell.imageView?.image = photo
+                cell.searchResultTitle?.text = result.title
+                cell.searchResultImageView?.image = photo
                 print("The loaded image: \(cell.imageView?.image)")
             }
         }
@@ -56,7 +57,7 @@ class SearchResultViewController: UITableViewController {
         print(segue.identifier)
         if(segue.identifier == "detailedView") {
             let detailedView = segue.destination as! DetailedViewController
-            let selectedCell = sender as! UITableViewCell
+            let selectedCell = sender as! SearchResultViewCell
             let indexPath = self.tableView.indexPath(for: selectedCell)!
             let result = searchResultItems[indexPath.row]
             detailedView.details = result
